@@ -1,0 +1,58 @@
+Paul McElroy
+EECS_448-Lab07
+
+Current output of main.cpp
+Test of LinkedList Class                                RESULT
+************************
+
+1) Testing "isEmpty()" method:
+	a) isEmpty() on empty list: 			FAILED
+	b) isEmpty() on a list with many elements: 	PASSED
+	------------------------------------------------------
+	isEmpty() Final Result: 			FAILED
+
+2) Testing "size()" method:
+	a) size() on empty list: 			FAILED
+	b) size() on list with many elements: 		FAILED
+	------------------------------------------------------
+	size() Final Result: 				FAILED
+
+3) Testing "search(T value)" method:
+	a) search on empty list: 			PASSED
+	b) search on non-empty list: 			PASSED
+	c) search on non-empty list, invalid values: 	PASSED
+	------------------------------------------------------
+	search Final Result: 				PASSED
+
+4) Testing "addBack(T value)" method:
+		Adding many random values to the back of
+		a LinkedList and the same values to the
+		back of a vector and then comparing them.
+	------------------------------------------------------
+	addBack Final Result: 				FAILED
+
+5) Testing "addFront(T value)" method:
+		Adding many random values to the front of
+		a LinkedList and the same values to the
+		front of a vector and then comparing them.
+	------------------------------------------------------
+	addFront Final Result: 				PASSED
+
+7) Testing "removeBack()" method:
+	------------------------------------------------------
+	removeBack Final Result: 			PASSED
+
+8) Testing "removeFront()" method:
+	------------------------------------------------------
+	removeFront Final Result: 			FAILED
+
+9) Comparing "removeFront()" and "removeBack()" methods:
+	------------------------------------------------------
+	removeFront Comparison Result: 			Same functionality!
+
+
+The four current broken functions are:
+1) isEmpty(): Always returns false, probably because it's using if(size() == 0) return true, but size() is broken so this breaks isEmpty().
+2) size(): Always return accurate size plus 1.
+3) addBack(T value) will always add the same value as any addBack(..) or addFront(..) called before it (when calling only addBack(...) successively, this just means it will only add one value over and over again).
+4) removeFront() has the same functionality as removeBack(); it either calls it outright or has just copied removeBack()'s code.
